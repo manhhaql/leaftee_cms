@@ -1,0 +1,202 @@
+.sidebar {
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: #042331;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+}
+.sidebar header {
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 100px;
+    background-color: #063146;
+    user-select: none;
+}
+.sidebar ul a {
+    display: block;
+    height: 100%;
+    width:100%;
+    padding-left: 30px;
+    line-height: 65px;
+    font-size: 20px;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid black;
+    transition: 0.4s;
+}
+.sidebar li:hover a {
+    padding-left: 40px;
+}
+#sidebar-check {
+    display: none;
+}
+label #sidebar-bars-btn, label #sidebar-close-btn {
+    position: absolute;
+    cursor: pointer;
+    background-color: var(--red);
+}
+label #sidebar-bars-btn {
+    top: 25px;
+    left: 40px;
+    font-size: 35px;
+    padding: 8px 12px;
+    background-color: var(--red);
+    border-radius: 50%;
+}
+label #sidebar-close-btn {
+    z-index: 1030;
+    top: 0;
+    left: -200px;
+    font-size: 25px;
+    padding: 4px 9px;
+    border-radius: 0 0 0 50%;
+    background-color: #042331;
+    transition: all 0.3s ease-in-out;
+}
+label #sidebar-close-btn:hover {
+    background-color: var(--red);
+}
+#sidebar-check:checked ~ .sidebar {
+    left: 0;
+}
+#sidebar-check:checked ~ label #sidebar-bars-btn {
+    left: 250px;
+    opacity: 0;
+    pointer-events: none;
+}
+#sidebar-check:checked ~ label #sidebar-close-btn {
+    left: 215px;
+}
+
+.content {
+    transition: all 0.3s ease-in-out;
+}
+#sidebar-check:checked ~ .content {
+    margin-left: 250px;
+}
+#sidebar-check:checked ~ #footer {
+    width: calc(100% - 250px);
+}
+#sidebar-check:checked ~ .content .navbar {
+    margin-left: 20px;
+}
+
+
+/* Header */
+#header {
+    background-color: bisque;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+}
+
+#header-list {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0;
+    height: 100px;
+    width: 100%;
+}
+#action{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.navbar {
+    display: flex;
+    margin-left: 120px;
+    height: 100px;
+    width: 100%;
+}
+.navbar-brand {
+    font-size: 40px;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+}
+
+.searchbar-container {
+    width: 300px;
+    height: 40px;
+    background-color: #fff;
+    border: 2px solid #0abb87;
+    border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.searchbar-container button {
+    border-radius: 50px;
+    background-color: teal;
+}
+
+.search-input {
+    border: none;
+    font-size: 18px;
+    border-radius: 0 50px 50px 0;
+    margin-left: 10px;
+    color: #042331;
+    width: 300px;
+}
+.search-input:focus {
+    outline: none;
+}
+.search-input::-webkit-search-cancel-button{
+    position:relative;
+    right:10px;
+    color: teal;
+}
+
+.dropdown ul {
+    position: absolute;
+    right: 0;
+    width: 200px;
+    margin-top: 3px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 6px;
+    background-color: #fff;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+.dropdown ul li {
+    height: 100%;
+    width: 100%;
+    padding: 0.7rem 1rem;
+    transition: 0.2s;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.dropdown ul li:hover {
+    background-color: #0abb863b;
+}
+.dropdown ul a{
+    color: var(--dark);
+}
+.dropdown button:focus + ul {
+    opacity: 1;
+    pointer-events: all;
+    transform: translateY(5px);
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 70px;
+    background-color: #0abb87;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease-in-out;
+}
+
